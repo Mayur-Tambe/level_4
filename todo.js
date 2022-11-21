@@ -8,12 +8,12 @@ const todoList = () => {
     };
 
     const overdue = () => {
-        const formattedDate = (d) => {
+        const formatDate = (d) => {
             return d.toISOString().split("T")[0];
         };
 
         const dateToday = new Date();
-        const today = formattedDate(dateToday);
+        const today = formatDate(dateToday);
 
         return all.filter((todo) => {
             if (todo.dueDate < today) return true;
@@ -22,12 +22,12 @@ const todoList = () => {
     };
 
     const dueToday = () => {
-        const formattedDate = (d) => {
+        const formatDate = (d) => {
             return d.toISOString().split("T")[0];
         };
 
         const dateToday = new Date();
-        const today = formattedDate(dateToday);
+        const today = formatDate(dateToday);
 
         let arr = all.filter((todo) => {
             if (todo.dueDate === today) return true;
@@ -37,12 +37,12 @@ const todoList = () => {
     };
 
     const dueLater = () => {
-        const formattedDate = (d) => {
+        const formatDate = (d) => {
             return d.toISOString().split("T")[0];
         };
 
         const dateToday = new Date();
-        const today = formattedDate(dateToday);
+        const today = formatDate(dateToday);
 
         return all.filter((todo) => {
             if (todo.dueDate > today) return true;
@@ -51,12 +51,12 @@ const todoList = () => {
     };
 
     const toDisplayableList = (list) => {
-        const formattedDate = (d) => {
+        const formatDate = (d) => {
             return d.toISOString().split("T")[0];
         };
 
         const dateToday = new Date();
-        const today = formattedDate(dateToday);
+        const today = formatDate(dateToday);
 
         let flag = list[0].dueDate == today ? true : false;
         const strArr = list.map((todo) => {
